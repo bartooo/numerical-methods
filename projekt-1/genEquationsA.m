@@ -1,6 +1,6 @@
-function [A,b] = genEquationA(n)
-%UNTITLED Summary of this function goes here
-%   Detailed explanation goes here
+function [A,b] = genEquationsA(n)
+%GENEQUATIONSA Funkcja generująca układy równań zdefiniowane w pkt. A
+
 A = zeros(n,n);
 b = zeros(n,1);
 for i = 1:n
