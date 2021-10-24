@@ -7,8 +7,10 @@ isColumnDominant = 1;
 
 % Sprawdzam czy macierz A jest silnie diagonalnie dominująca wierszowo
 for i = 1:n
-    a = abs(A(i,i));
-    abs_sum = sum(abs(A(i, :))) - a;
+    a = abs(A(i,i)); % Element na głównej przekątnej
+
+    % Suma elementów w wierszu bez elementu na głównej przekątnej
+    abs_sum = sum(abs(A(i, :))) - a; 
     if a < abs_sum
         isRowDominant = 0;
         break
@@ -17,7 +19,9 @@ end
 
 % Sprawdzam czy macierz A jest silnie diagonalnie dominująca kolumnowo
 for i = 1:n
-    a = abs(A(i,i));
+    a = abs(A(i,i)); % Element na głównej przekątnej
+
+    % Suma elementów w kolumnie bez elementu na głównej przekątnej
     abs_sum = sum(abs(A(:, i))) - a;
     if a < abs_sum
         isColumnDominant = 0;
