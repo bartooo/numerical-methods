@@ -1,16 +1,21 @@
 function [x] = LUDecomposition(A, b, n)
 %LUDECOMPOSITION Funkcja rozwiązująca układy równań metodą rozkładu LU
 
-L = eye(n,n);
+L = eye(n, n);
 y = zeros(n,1);
 x = zeros(n,1);
 
+if det(A) == 0
+    disp('Macierz A nie jest nieosobliwa');
+    return
+end
+
 for k = 1:n
-    for j = k+1:n
+    for i = k+1:n
         % Wykonuję eliminację Gaussa
-        l_ik = A(j,k) / A(k,k);
-        L(j,k) = l_ik;
-        A(j,:) = A(j,:) - (l_ik*A(k,:));
+        l_ik = A(i,k) / A(k,k);
+        L(i,k) = l_ik;
+        A(i,:) = A(i,:) - (l_ik*A(k,:));
     end
 end
 U = A;

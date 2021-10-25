@@ -1,0 +1,11 @@
+>> [x] = machinePrecision()
+
+x =
+
+   2.2204e-16
+
+>> eps
+
+ans =
+
+   2.2204e-16

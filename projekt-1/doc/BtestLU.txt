@@ -1,0 +1,11 @@
+Elapsed time is 0.000070 seconds.
+Elapsed time is 0.000040 seconds.
+Elapsed time is 0.000157 seconds.
+Elapsed time is 0.000459 seconds.
+Elapsed time is 0.003330 seconds.
+
+errors =
+
+   1.0e-10 *
+
+    0.0001    0.0009    0.0422    0.0430    0.1104
