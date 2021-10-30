@@ -8,9 +8,16 @@ x_new = zeros(n, 1);
 
 % Sprawdzenie czy macierz A jest silnie diagonalnie dominująca, by
 % określić czy metoda jest zbieżna
-if isDiagonallyDominant(A, n) == 0
-    disp('Macierz A nie jest silnie diagonalnie dominująca');
-    return
+for i = 1:n
+    if abs(A(i,i)) <= (sum(abs(A(i,:))) - abs(A(i,i)))
+        disp('Macierz A nie jest silnie diagonalnie dominująca');
+        return
+    end
+
+    if abs(A(i,i)) <= (sum(abs(A(:,i))) - abs(A(i,i)))
+        disp('Macierz A nie jest silnie diagonalnie dominująca');
+        return
+    end
 end
 
 % Dekompozycja macierzy A
@@ -37,7 +44,7 @@ while error > e2
         x_new(i) = (-L(i,:)*x_new - w(i)) / D(i, i);
     end
 
-    error = euclideanNorm(x_new - x_curr);
+    error = norm(x_new - x_curr);
 end
 
 x = x_new;

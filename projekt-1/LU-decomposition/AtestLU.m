@@ -9,7 +9,7 @@ for n_i = n
     tic
     x = LUDecomposition(A, b, n_i);
     toc
-    errors(i) = euclideanNorm(A*x - b);
+    errors(i) = norm(A*x - b);
     i = i + 1;
 end
 

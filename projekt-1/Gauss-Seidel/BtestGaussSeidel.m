@@ -9,7 +9,7 @@ for n_i = n
     tic
     x = GaussSeidelMethod(A, b, n_i, e2);
     toc
-    errors(i) = euclideanNorm(A*x - b);
+    errors(i) = norm(A*x - b);
     i = i + 1;
 end
 
